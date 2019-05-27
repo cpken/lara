@@ -20,8 +20,8 @@ $manager->addConnection(require '../config/database.php');
 $manager->bootEloquent();
 
 $app->instance('config', new Fluent);
-$app['config']['view.compiled'] = __DIR__.'/../storage/framework/views';
-$app['config']['view.paths'] = [__DIR__.'/../resources/views'];
+$app['config']['view.compiled'] = __DIR__.'/../storage/framework/views';//视图编译文件路径
+$app['config']['view.paths'] = [__DIR__.'/../resources/views'];//视图文件储存路径
 with(new Illuminate\View\ViewServiceProvider($app))->register();
 with(new Illuminate\Filesystem\FilesystemServiceProvider($app))->register();
 
